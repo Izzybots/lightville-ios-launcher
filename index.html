@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>LightVille Launcher</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="launcher">
+    <aside class="sidebar">
+      <div class="brand-badge" id="brandBadge">LV</div>
+      <nav class="nav-list">
+        <button class="nav-btn active" data-tab="home">HOME</button>
+        <button class="nav-btn" data-tab="news">NEWS</button>
+        <button class="nav-btn" data-tab="packs">PACKS</button>
+        <button class="nav-btn" data-tab="staff">STAFF</button>
+        <button class="nav-btn" data-tab="settings">SETTINGS</button>
+      </nav>
+    </aside>
+
+    <main class="main-panel">
+      <header class="top-bar">
+        <div>
+          <h1 id="launcherTitle">LIGHTVILLE RP</h1>
+          <p id="launcherSubtitle">Locked to Official Server</p>
+        </div>
+        <div class="pill-row">
+          <a id="discordLink" href="#" target="_blank" rel="noopener">Discord</a>
+          <a id="websiteLink" href="#" target="_blank" rel="noopener">Website</a>
+        </div>
+      </header>
+
+      <section id="tab-home" class="tab-content active">
+        <div class="hero-card">
+          <span class="tag">LIGHTVILLE MEDIA & UPDATES</span>
+          <h2>GTA Mzansi & SA Experience</h2>
+          <p>Select your pack option, copy the locked server address, and launch smoothly.</p>
+        </div>
+
+        <div class="pack-selector">
+          <button class="pack-card selected" id="chooseMzansi" type="button">
+            <strong>GTA Mzansi Modpack</strong>
+            <span>Full modpack experience</span>
+          </button>
+          <button class="pack-card" id="chooseVanilla" type="button">
+            <strong>GTA SA Lite / Base</strong>
+            <span>Smaller footprint for low storage</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="tab-news" class="tab-content">
+        <div class="info-card">
+          <h3>Latest Announcements</h3>
+          <p>December rollout prep active. Verify pack integrity and server connection before launch.</p>
+        </div>
+      </section>
+
+      <section id="tab-packs" class="tab-content">
+        <div class="info-card">
+          <h3>Pack Download</h3>
+          <p id="selectedPackDesc">GTA Mzansi Modpack selected.</p>
+          <a id="downloadPackBtn" class="secondary-btn" href="#" download>Download Selected Pack</a>
+        </div>
+      </section>
+
+      <section id="tab-staff" class="tab-content">
+        <div class="info-card">
+          <h3>Staff & Webhooks</h3>
+          <p>Quick access to LightVille staff tools and web portals.</p>
+          <a id="staffLink" class="secondary-btn" href="#" target="_blank" rel="noopener">Open Staff Portal</a>
+        </div>
+      </section>
+
+      <section id="tab-settings" class="tab-content">
+        <div class="info-card">
+          <h3>Connection & Build Info</h3>
+          <p id="serverEndpointText"></p>
+          <div id="devOverrideBox" class="hidden">
+            <label for="devIpInput">DEV Server Override (DEV Build Only)</label>
+            <input id="devIpInput" type="text" placeholder="ip:port" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="status-panel">
+      <div class="status-box">
+        <span class="status-dot"></span>
+        <strong id="serverStatusLabel">SERVER READY</strong>
+        <p id="serverAddressDisplay">0.0.0.0:7777</p>
+      </div>
+
+      <button id="copyIpBtn" class="secondary-btn" type="button">Copy Server IP</button>
+      <button id="playBtn" class="play-btn" type="button">▶ PLAY</button>
+      <p id="feedbackMsg" class="feedback"></p>
+    </aside>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
